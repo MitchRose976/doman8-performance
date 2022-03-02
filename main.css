@@ -8,12 +8,68 @@
 body {
     background-color: var(--bg) !important;
     padding: 0 10rem;
+    font-family: helvetica, arial, sans-serif;
 }
 
 /* Welcome Message */
 .welcome-message {
     margin-top: 5rem;
     color: white;
+    cursor: pointer;
+}
+
+/* Fade in content animation */
+.fade-in {
+    animation: fadeIn 3s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    
+    to {
+        opacity: 1;
+    }
+}
+
+/* Hover animation on text for Welcome message */
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    color: white;
+}
+
+.hover-underline-animation:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--hover-red);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Underline effect on Garage and Log Files header */
+.unexpected-1 {
+    background: 
+        linear-gradient(var(--hover-red) 0 0) var(--p, 50%) 
+        100% /var(--d, 10%) 3px no-repeat;
+    transition: 0.3s, background-position 0.3s 0.3s;
+}
+
+.unexpected-1:hover {
+    --d: 100%;
+    --p: 0%;
+    transition: 0.3s, background-size 0.3s 0.3s;
 }
 
 /* Carousel */
@@ -43,19 +99,16 @@ body {
     width : 100%;
     margin-top: 5rem;
     padding: 2rem;
-    border: 1px solid red;
-}
-
-#my-garage-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
+    
+    /* border: 1px solid red; */
 }
 
 #garage-title {
     color: white;
     text-align: center;
+    width: 15rem;
+    margin: 0 auto;
+    cursor: default;
 }
 
 #my-garage-icon {
@@ -63,6 +116,10 @@ body {
     margin-left: 1rem;
     width: 1.5rem !important;
     height: 3rem !important; 
+}
+
+.card {
+    cursor: pointer;
 }
 
 /* Vehicle Cards - these are pre-existing bootstrap classes I am adding styling to */
@@ -83,14 +140,15 @@ body {
     width : 100%;
     margin-top: 5rem;
     padding: 2rem;
-    border: 1px solid red;
+    
 }
 
-#log-files-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
+#log-files-title {
+    color: white;
+    text-align: center;
+    width: 15rem;
+    margin: 0 auto;
+    cursor: default;
 }
 
 #log-file-header-icon {
@@ -98,11 +156,6 @@ body {
     margin-left: 1rem;
     width: 1.5rem !important;
     height: 3rem !important;
-}
-
-#log-files-title {
-    color: white;
-    text-align: center;
 }
 
 /* Container for each single log file */
@@ -114,6 +167,7 @@ body {
     flex-direction: column;
     padding: 0.8rem;
     margin: 1rem;
+    cursor: pointer;
 }
 
 .log-file-name {
