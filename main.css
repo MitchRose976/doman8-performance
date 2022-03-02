@@ -1,10 +1,12 @@
-/* html {
-    background-color: #000000f0 !important;
-    padding: 0 10rem;
-} */
+:root {
+    --bg: #000000f0;
+    --medium-grey: #B3BABD;
+    --logo-red: #972024;
+    --hover-red: #D4353A;
+}
 
 body {
-    background-color: #000000f0 !important;
+    background-color: var(--bg) !important;
     padding: 0 10rem;
 }
 
@@ -33,7 +35,7 @@ body {
     align-items: center;
     margin-top: 2rem;
     padding: 1rem;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 /* Garage */
@@ -42,12 +44,25 @@ body {
     margin-top: 5rem;
     padding: 2rem;
     border: 1px solid red;
-    background-color: 000000f0;
+}
+
+#my-garage-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
 }
 
 #garage-title {
     color: white;
     text-align: center;
+}
+
+#my-garage-icon {
+    color: var(--medium-grey);
+    margin-left: 1rem;
+    width: 1.5rem !important;
+    height: 3rem !important; 
 }
 
 /* Vehicle Cards - these are pre-existing bootstrap classes I am adding styling to */
@@ -69,7 +84,20 @@ body {
     margin-top: 5rem;
     padding: 2rem;
     border: 1px solid red;
-    background-color: 000000f0;
+}
+
+#log-files-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+#log-file-header-icon {
+    color: var(--medium-grey);
+    margin-left: 1rem;
+    width: 1.5rem !important;
+    height: 3rem !important;
 }
 
 #log-files-title {
@@ -79,22 +107,29 @@ body {
 
 /* Container for each single log file */
 .log-file {
-    border: 1px solid white;
+    /* border: 1px solid #E3F2FD; */
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     padding: 0.8rem;
-    margin: 0 1rem;
+    margin: 1rem;
 }
 
 .log-file-name {
     margin-top: 0.5rem;
-    color: white;
+    color: var(--medium-grey);
 }
 
 .log-file-button {
     margin-top: 0.5rem;
+    background-color: var(--logo-red);
+    border: 1px solid var(--logo-red);
+}
+
+.log-file-button:hover {
+    background-color: var(--hover-red);
+    border: 1px solid var(--hover-red);
 }
 
 /* File Icon - This is a pre-defined bootstrap class */
