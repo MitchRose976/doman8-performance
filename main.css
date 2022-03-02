@@ -21,11 +21,23 @@ body {
 
 .carousel-image {
     width: 100%;
-    height: 30rem;
+    height: 50rem;
+}
+
+/* Container for garage vehicles and log files */
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    border: 1px solid red;
 }
 
 /* Garage */
-.garage {
+.my-garage {
     width : 100%;
     margin-top: 5rem;
     padding: 2rem;
@@ -36,17 +48,6 @@ body {
 #garage-title {
     color: white;
     text-align: center;
-}
-
-.garage-vehicles {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-top: 2rem;
-    padding: 1rem;
-    border: 1px solid red;
 }
 
 /* Vehicle Cards - these are pre-existing bootstrap classes I am adding styling to */
@@ -62,7 +63,56 @@ body {
 }
 
 
+/* Files */
+.my-log-files {
+    width : 100%;
+    margin-top: 5rem;
+    padding: 2rem;
+    border: 1px solid red;
+    background-color: 000000f0;
+}
+
+#log-files-title {
+    color: white;
+    text-align: center;
+}
+
+/* Container for each single log file */
+.log-file {
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0.8rem;
+    margin: 0 1rem;
+}
+
+.log-file-name {
+    margin-top: 0.5rem;
+    color: white;
+}
+
+.log-file-button {
+    margin-top: 0.5rem;
+}
+
+/* File Icon - This is a pre-defined bootstrap class */
+.bi-file-earmark {
+    color:white;
+    height: 5rem;
+    width: 4rem;
+    /* border: 1px solid red; */
+}
+
 /* Media Queries */
+@media only screen and (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        padding: 0;
+    }
+}
+
 @media only screen and (max-width: 768px) {
     body {
         padding: 0 5rem;
@@ -83,8 +133,8 @@ body {
         height: 20rem;
     }
 
-    .garage-vehicles {
+    .container {
         flex-direction: column;
         padding: 0;
-    }
+    }                                                                                                   
 }
