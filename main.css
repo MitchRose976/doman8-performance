@@ -3,6 +3,7 @@
     --medium-grey: #B3BABD;
     --logo-red: #972024;
     --hover-red: #D4353A;
+    --dark-elevated: #191818bf;
 }
 
 body {
@@ -13,7 +14,7 @@ body {
 
 /* Welcome Message */
 .welcome-message {
-    margin-top: 5rem;
+    margin-top: 2rem;
     color: white;
     cursor: pointer;
 }
@@ -72,6 +73,13 @@ body {
     transition: 0.3s, background-size 0.3s 0.3s;
 }
 
+/* Elevated color and box shadow for div */
+.elevated {
+    background-color: var(--dark-elevated);
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%) !important;
+    border-radius: 1rem;
+}
+
 /* Carousel */
 #carouselExampleCaptions {
     margin-top: 2rem;
@@ -79,7 +87,7 @@ body {
 
 .carousel-image {
     width: 100%;
-    height: 50rem;
+    height: 40rem;
 }
 
 /* Container for garage vehicles and log files */
@@ -94,13 +102,11 @@ body {
     /* border: 1px solid red; */
 }
 
-/* Garage */
+/* MY GARAGE */
 .my-garage {
     width : 100%;
-    margin-top: 5rem;
+    margin-top: 2rem;
     padding: 2rem;
-    
-    /* border: 1px solid red; */
 }
 
 #garage-title {
@@ -135,12 +141,12 @@ body {
 }
 
 
-/* Files */
+/* MY LOG FILES - DESKTOP/TABLET */
 .my-log-files {
     width : 100%;
-    margin-top: 5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
     padding: 2rem;
-    
 }
 
 #log-files-title {
@@ -194,6 +200,52 @@ body {
     /* border: 1px solid red; */
 }
 
+/* MY LOG FILES TABLE - MOBILE */
+table {
+    border: 1px solid var(--dark-elevated);
+    border-radius: 1rem;
+    display: none;
+}
+
+thead {
+    border: 1px solid white;
+}
+
+td {
+    border: 1px solid white;
+    padding: 0.5rem 4rem 0.5rem 0.5rem;
+}
+
+td a {
+    color: white;
+}
+
+td a:hover {
+    color: var(--hover-red);
+}
+
+th {
+    border: 1px solid white;
+    padding: 0.5rem 4rem 0.5rem 0.5rem;
+}
+
+tr {
+    border: 1px solid white;
+}
+
+table thead tr th {
+    color: white;
+}
+
+table tbody tr td {
+    color: var(--medium-grey);
+}
+
+#link-header {
+    color: white;
+}
+
+
 /* Media Queries */
 @media only screen and (max-width: 900px) {
     .container {
@@ -223,7 +275,7 @@ body {
     }
 
     .container {
-        flex-direction: column;
+        /* flex-direction: column; */
         padding: 0;
     }                                                                                                   
 }
