@@ -97,6 +97,7 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     margin-top: 2rem;
     padding: 1rem;
     /* border: 1px solid red; */
@@ -197,7 +198,6 @@ body {
     color:white;
     height: 5rem;
     width: 4rem;
-    /* border: 1px solid red; */
 }
 
 /* MY LOG FILES TABLE - MOBILE */
@@ -207,30 +207,17 @@ table {
     display: none;
 }
 
-thead {
-    border: 1px solid white;
-}
-
 td {
-    border: 1px solid white;
-    padding: 0.5rem 4rem 0.5rem 0.5rem;
+    padding: 0.5rem 2rem 0.5rem 0.5rem;
 }
 
 td a {
     color: white;
+    text-align: center;
 }
 
 td a:hover {
     color: var(--hover-red);
-}
-
-th {
-    border: 1px solid white;
-    padding: 0.5rem 4rem 0.5rem 0.5rem;
-}
-
-tr {
-    border: 1px solid white;
 }
 
 table thead tr th {
@@ -245,12 +232,30 @@ table tbody tr td {
     color: white;
 }
 
+#table-file-names {
+    border-bottom: 1px solid var(--hover-red);
+    padding: 0.5rem 10rem 0.5rem 0.5rem;
+}
+
+#table-file-links {
+    border-bottom: 1px solid var(--hover-red);
+    padding: 0.5rem 2rem 0.5rem 0.5rem;
+}
+
 
 /* Media Queries */
 @media only screen and (max-width: 900px) {
     .container {
         flex-direction: column;
         padding: 0;
+    }
+
+    .log-file {
+        display: none;
+    }
+
+    table {
+        display: block;
     }
 }
 
@@ -277,5 +282,40 @@ table tbody tr td {
     .container {
         /* flex-direction: column; */
         padding: 0;
-    }                                                                                                   
+    }  
+}
+
+@media only screen and (max-width: 280px) {
+    
+    .container {
+        padding: 0rem;
+    }
+
+    #garage-title {
+        font-size: 1.6rem;
+        width: 15rem;
+        text-align: left;  
+    }
+
+    .card {
+        width: 10rem !important;
+        margin-bottom: 1rem;
+    }
+    
+    #log-files-title {
+        font-size: 1.6rem;
+        width: 15rem;
+        text-align: left;    
+    }
+    
+    .unexpected-1:hover {
+        --d: 85%;
+        --p: 0%;
+        transition: 0.3s, background-size 0.3s 0.3s;
+    }
+    
+    #table-file-names {
+        border-bottom: 1px solid var(--hover-red);
+        padding: 0.5rem 5rem 0.5rem 0.5rem;
+    }
 }
